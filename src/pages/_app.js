@@ -21,7 +21,10 @@ const lightTheme = createTheme({
 const darkTheme = createTheme({
   type: "dark",
   theme: {
-    colors: {}, // ! optional
+    colors: {}, 
+    fonts:{
+      mono: "Menlo, Monaco, 'Lucida Console', 'Poppins'",
+    }
   },
 });
 

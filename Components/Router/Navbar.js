@@ -1,17 +1,16 @@
 import {
   Navbar,
   Button,
-  Link,
   Text,
   useTheme,
   Dropdown,
   Avatar,
 } from "@nextui-org/react";
 import { Layout } from "./Layout.js";
-import { AcmeLogo } from "./AcmeLogo.js";
 import React from "react";
 import ModeSwitch from "Components/ModeSwitch/SwitchMode.js";
-import Image from "next/image.js";
+import Link from "next/link";
+import styles from './css/Navbar.module.css';
 
 const NavbarComponent = () => {
   const collapseItems = [
@@ -28,6 +27,10 @@ const NavbarComponent = () => {
   ];
   const { isDark } = useTheme();
 
+  const linkHive = [
+    { content: "Home", href: "/", isActive: false },
+    { content: "New Here ?", href: "./api/auth/signin", isActive: "text-bold" },
+  ];
   return (
     <>
       <Layout style={{ zIndex: 1 }}>
@@ -41,24 +44,29 @@ const NavbarComponent = () => {
             }}
           >
             {isDark ? (
-              <img src="/assets/removed/3-white.png" alt="linkHive.inc"/>
+              <img src="/assets/removed/3-white.png" alt="linkHive.inc" />
             ) : (
-              <img src="/assets/removed/4-black.png" alt="linkHive.inc"/>
+              <img src="/assets/removed/4-black.png" alt="linkHive.inc" />
             )}
           </Navbar.Brand>
+
           <Navbar.Content
-            enableCursorHighlight
             activeColor="secondary"
             hideIn="xs"
             variant="underline"
           >
-            <Navbar.Link href="#">Features</Navbar.Link>
-            <Navbar.Link isActive href="#">
-              Customers
-            </Navbar.Link>
-            <Navbar.Link href="#">Pricing</Navbar.Link>
-            <Navbar.Link href="#">Company</Navbar.Link>
+            <Navbar.Content>
+              {linkHive &&
+                linkHive.map((item, content) => {
+                  return (
+                    <Link href={item.href}>
+                      <Text className={`font-poppins ${styles.barFact}`}> {item.content}</Text>
+                    </Link>
+                  );
+                })}
+            </Navbar.Content>
           </Navbar.Content>
+
           <Navbar.Content
             css={{
               "@xs": {

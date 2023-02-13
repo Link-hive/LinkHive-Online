@@ -1,7 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 :root {
   --max-width: 1100px;
@@ -90,4 +90,8 @@
   -o-transition: all 0.3s ease;
   box-sizing: border-box;
   justify-content: center;
+}
+
+p{
+  font-family: var(--font-poppins);
 }
