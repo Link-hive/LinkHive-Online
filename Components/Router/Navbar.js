@@ -10,7 +10,8 @@ import { Layout } from "./Layout.js";
 import React from "react";
 import ModeSwitch from "Components/ModeSwitch/SwitchMode.js";
 import Link from "next/link";
-import styles from './css/Navbar.module.css';
+import styles from "./css/Navbar.module.css";
+import SearchComponent from "Components/AlgoliaSearch/Search.js";
 
 const NavbarComponent = () => {
   const collapseItems = [
@@ -29,6 +30,10 @@ const NavbarComponent = () => {
 
   const linkHive = [
     { content: "Home", href: "/", isActive: false },
+    { content: "About us", href: "/", isActive: false },
+    { content: "Latest Blogs", href: "/", isActive: false },
+    { content: "Forums", href: "/", isActive: false },
+    { content: "Code of conduct", href: "/", isActive: false },
     { content: "New Here ?", href: "./api/auth/signin", isActive: "text-bold" },
   ];
   return (
@@ -42,6 +47,7 @@ const NavbarComponent = () => {
                 w: "12%",
               },
             }}
+            hideIn={"xs"}
           >
             {isDark ? (
               <img src="/assets/removed/3-white.png" alt="linkHive.inc" />
@@ -52,7 +58,7 @@ const NavbarComponent = () => {
 
           <Navbar.Content
             activeColor="secondary"
-            hideIn="xs"
+            hideIn="sm"
             variant="underline"
           >
             <Navbar.Content>
@@ -60,18 +66,21 @@ const NavbarComponent = () => {
                 linkHive.map((item, content) => {
                   return (
                     <Link href={item.href}>
-                      <Text className={`font-poppins ${styles.barFact}`}> {item.content}</Text>
+                      <Text className={`font-poppins ${styles.barFact}`}>
+                        {" "}
+                        {item.content}
+                      </Text>
                     </Link>
                   );
                 })}
             </Navbar.Content>
+                <SearchComponent placeholder="Search something" />
           </Navbar.Content>
 
           <Navbar.Content
             css={{
               "@xs": {
                 w: "12%",
-                jc: "flex-end",
               },
             }}
           >
@@ -122,23 +131,22 @@ const NavbarComponent = () => {
             </Dropdown>
           </Navbar.Content>
           <Navbar.Collapse>
-            {collapseItems.map((item, index) => (
+            {linkHive.map((item, index) => (
               <Navbar.CollapseItem
-                key={item}
                 activeColor="secondary"
-                css={{
-                  color: index === collapseItems.length - 1 ? "$error" : "",
-                }}
-                isActive={index === 2}
+                isActive={item.isActive}
               >
                 <Link
                   color="inherit"
                   css={{
                     minWidth: "100%",
                   }}
-                  href="#"
+                  href={item.href}
                 >
-                  {item}
+                  <Text className={`font-poppins ${styles.barFact}`}>
+                    {" "}
+                    {item.content}
+                  </Text>
                 </Link>
               </Navbar.CollapseItem>
             ))}

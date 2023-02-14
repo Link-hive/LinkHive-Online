@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "firebase-init-03-32"
+  },
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}

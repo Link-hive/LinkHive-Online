@@ -1,6 +1,9 @@
 {
   "name": "linkhive",
+  "author": "Anshu Naagar",
   "version": "0.1.0",
+  "repository": "https://github.com/Link-Hive/LinkHive-Online",
+  "module": "ES6",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,6 +17,8 @@
     "env": "^0.0.2",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
+    "firebase": "^9.17.1",
+    "firebase-tools": "^11.23.0",
     "mongoose": "^6.9.1",
     "next": "13.1.6",
     "next-auth": "^4.19.2",
