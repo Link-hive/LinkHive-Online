@@ -4,7 +4,6 @@
   "author": "Anshu Naagar",
   "version": "0.1.0",
   "repository": "https://github.com/Link-Hive/LinkHive-Online",
-  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
