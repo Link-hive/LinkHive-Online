@@ -34,9 +34,12 @@ const NavbarComponent = () => {
     { content: "Latest Blogs", href: "/content/Blogs", isActive: "text-bold" },
     { content: "About", href: "/content/About", isActive: false },
     { content: "Code of conduct", href: "/content/Conduct", isActive: false },
-    { content: "Github", href: "https://github.com/Link-Hive", isActive: false },
+    {
+      content: "Github",
+      href: "https://github.com/Link-Hive",
+      isActive: false,
+    },
     { content: "New Here ?", href: "/api/auth/signin", isActive: "text-bold" },
-
   ];
   return (
     <>
@@ -65,18 +68,19 @@ const NavbarComponent = () => {
           >
             <Navbar.Content>
               {linkHive &&
-                
                 linkHive.map((item, content) => {
                   return (
                     <Link href={item.href}>
-                      <Text h6 className={`font-poppins mt-4 ${styles.barFact} ${item.isActive}`}>
+                      <Text
+                        h6
+                        className={`font-poppins my-8 ${styles.barFact} ${item.isActive}`}
+                      >
                         {" "}
                         {item.content}
                       </Text>
                     </Link>
                   );
                 })}
-
             </Navbar.Content>
           </Navbar.Content>
 
@@ -88,7 +92,7 @@ const NavbarComponent = () => {
               },
             }}
           >
-          <ModeSwitch />
+            <ModeSwitch />
             <Dropdown placement="bottom-right">
               <Navbar.Item>
                 <Dropdown.Trigger>
