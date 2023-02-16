@@ -30,17 +30,19 @@ const NavbarComponent = () => {
 
   const linkHive = [
     { content: "Home", href: "/", isActive: false },
-    { content: "About us", href: "/", isActive: false },
-    { content: "Latest Blogs", href: "/", isActive: false },
-    { content: "Forums", href: "/", isActive: false },
-    { content: "Code of conduct", href: "/", isActive: false },
-    { content: "New Here ?", href: "./api/auth/signin", isActive: "text-bold" },
+    { content: "Docs", href: "/content/Documentation", isActive: false },
+    { content: "Latest Blogs", href: "/content/Blogs", isActive: "text-bold" },
+    { content: "About", href: "/content/About", isActive: false },
+    { content: "Code of conduct", href: "/content/Conduct", isActive: false },
+    { content: "Github", href: "https://github.com/Link-Hive", isActive: false },
+    { content: "New Here ?", href: "/api/auth/signin", isActive: "text-bold" },
+
   ];
   return (
     <>
       <Layout style={{ zIndex: 1 }}>
         <Navbar isBordered variant="sticky">
-          <Navbar.Toggle showIn="xs" />
+          <Navbar.Toggle showIn="md" />
           <Navbar.Brand
             css={{
               "@xs": {
@@ -58,33 +60,35 @@ const NavbarComponent = () => {
 
           <Navbar.Content
             activeColor="secondary"
-            hideIn="sm"
+            hideIn="md"
             variant="underline"
           >
             <Navbar.Content>
               {linkHive &&
+                
                 linkHive.map((item, content) => {
                   return (
                     <Link href={item.href}>
-                      <Text className={`font-poppins ${styles.barFact}`}>
+                      <Text h6 className={`font-poppins mt-4 ${styles.barFact} ${item.isActive}`}>
                         {" "}
                         {item.content}
                       </Text>
                     </Link>
                   );
                 })}
+
             </Navbar.Content>
-                <SearchComponent placeholder="Search something" />
           </Navbar.Content>
 
+          <SearchComponent placeholder="Search something" />
           <Navbar.Content
             css={{
               "@xs": {
-                w: "12%",
+                w: "8%",
               },
             }}
           >
-            <ModeSwitch />
+          <ModeSwitch />
             <Dropdown placement="bottom-right">
               <Navbar.Item>
                 <Dropdown.Trigger>
