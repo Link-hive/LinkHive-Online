@@ -10,6 +10,7 @@ import { Layout } from "./Layout.js";
 import React from "react";
 import ModeSwitch from "Components/ModeSwitch/SwitchMode.js";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./css/Navbar.module.css";
 import SearchComponent from "Components/AlgoliaSearch/Search.js";
 
@@ -55,9 +56,25 @@ const NavbarComponent = () => {
             hideIn={"xs"}
           >
             {isDark ? (
-              <img src="/assets/removed/3-white.png" alt="linkHive.inc" />
+              <div>
+                <Image
+                  width={200}
+                  height={200}
+                  src="/assets/removed/3-white.png"
+                  alt="linkHive.inc"
+                  priority
+                />
+              </div>
             ) : (
-              <img src="/assets/removed/4-black.png" alt="linkHive.inc" />
+              <div>
+                <Image
+                  width={200}
+                  height={200}
+                  priority
+                  src="/assets/removed/4-black.png"
+                  alt="linkHive.inc"
+                />
+              </div>
             )}
           </Navbar.Brand>
 
@@ -70,21 +87,24 @@ const NavbarComponent = () => {
               {linkHive &&
                 linkHive.map((item, content) => {
                   return (
-                    <Link href={item.href}>
-                      <Text
-                        h6
-                        className={`font-poppins my-8 ${styles.barFact} ${item.isActive}`}
-                      >
-                        {" "}
-                        {item.content}
-                      </Text>
-                    </Link>
+                    <div key={item.content}>
+                      <Link href={item.href}>
+                        <Text
+                          h6
+                          className={`font-poppins my-8 ${styles.barFact} ${item.isActive}`}
+                        >
+                          {" "}
+                          {item.content}
+                        </Text>
+                      </Link>
+                    </div>
                   );
                 })}
             </Navbar.Content>
           </Navbar.Content>
 
           <SearchComponent placeholder="Search something" />
+
           <Navbar.Content
             css={{
               "@xs": {
@@ -138,25 +158,28 @@ const NavbarComponent = () => {
               </Dropdown.Menu>
             </Dropdown>
           </Navbar.Content>
+
           <Navbar.Collapse>
             {linkHive.map((item, index) => (
-              <Navbar.CollapseItem
-                activeColor="secondary"
-                isActive={item.isActive}
-              >
-                <Link
-                  color="inherit"
-                  css={{
-                    minWidth: "100%",
-                  }}
-                  href={item.href}
+              <div key={item.content}>
+                <Navbar.CollapseItem
+                  activeColor="secondary"
+                  isActive={item.isActive}
                 >
-                  <Text className={`font-poppins ${styles.barFact}`}>
-                    {" "}
-                    {item.content}
-                  </Text>
-                </Link>
-              </Navbar.CollapseItem>
+                  <Link
+                    color="inherit"
+                    css={{
+                      minWidth: "100%",
+                    }}
+                    href={item.href}
+                  >
+                    <Text className={`font-poppins ${styles.barFact}`}>
+                      {" "}
+                      {item.content}
+                    </Text>
+                  </Link>
+                </Navbar.CollapseItem>
+              </div>
             ))}
           </Navbar.Collapse>
         </Navbar>
