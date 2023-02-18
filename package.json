@@ -12,12 +12,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-tailwind/react": "^1.4.2",
     "@next/font": "13.1.6",
     "@nextui-org/react": "^1.0.0-beta.12",
+    "bootstrap": "^5.2.3",
     "env": "^0.0.2",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "firebase": "^9.17.1",
+    "framer-motion": "^9.0.4",
     "mongoose": "^6.9.1",
     "next": "13.1.6",
     "next-auth": "^4.19.2",

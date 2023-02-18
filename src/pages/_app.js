@@ -10,6 +10,8 @@ import React from "react";
 import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ThemeProvider } from "@material-tailwind/react";
 
 const lightTheme = createTheme({
   type: "light",
@@ -21,10 +23,10 @@ const lightTheme = createTheme({
 const darkTheme = createTheme({
   type: "dark",
   theme: {
-    colors: {}, 
-    fonts:{
+    colors: {},
+    fonts: {
       mono: "Menlo, Monaco, 'Lucida Console', 'Poppins'",
-    }
+    },
   },
 });
 
@@ -35,19 +37,21 @@ export default function App({
   return (
     <>
       <SessionProvider session={session}>
-        <NextThemesProvider
-          defaultTheme="system"
-          attribute="class"
-          value={{
-            light: lightTheme.className,
-            dark: darkTheme.className,
-          }}
-        >
-          <NextUIProvider>
-            <NavbarComponent />
-            <Component {...pageProps} />
-          </NextUIProvider>
-        </NextThemesProvider>
+        <ThemeProvider>
+          <NextThemesProvider
+            defaultTheme="system"
+            attribute="class"
+            value={{
+              light: lightTheme.className,
+              dark: darkTheme.className,
+            }}
+          >
+            <NextUIProvider>
+              <NavbarComponent />
+              <Component {...pageProps} />
+            </NextUIProvider>
+          </NextThemesProvider>
+        </ThemeProvider>
       </SessionProvider>
     </>
   );

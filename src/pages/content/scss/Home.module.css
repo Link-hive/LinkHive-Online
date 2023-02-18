@@ -1,0 +1,18 @@
+.heading {
+  font-size: 4rem;
+  text-align: center;
+  align-items: center;
+  width: 40%;
+  margin: auto;
+  position: absolute;
+  top: 30%;
+}
+
+.content {
+  background: red;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}/*# sourceMappingURL=Home.module.css.map */
