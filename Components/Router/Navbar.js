@@ -91,7 +91,7 @@ const NavbarComponent = () => {
                       <Link href={item.href}>
                         <Text
                           h6
-                          className={`font-poppins my-8 ${styles.barFact} ${item.isActive}`}
+                          className={`font-poppins  ${styles.adjustment} ${styles.barFact} ${item.isActive}`}
                         >
                           {" "}
                           {item.content}

@@ -1,0 +1,25 @@
+.barFact::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--nextui-colors-secondary);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    display: block;
+    box-sizing: border-box;
+}
+.barFact:hover::after{
+    width: 100%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+.adjustment{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
