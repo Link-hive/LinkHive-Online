@@ -12,6 +12,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "@material-tailwind/react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const lightTheme = createTheme({
   type: "light",
