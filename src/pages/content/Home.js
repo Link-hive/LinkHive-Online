@@ -12,8 +12,8 @@ const HomeComponent = () => {
           <div className="row items-center">
             <div className="col-md-7">
               <h1 className="drop-shadow-sm">
-                We're innovation by people <br />
-                and for people
+                We are innovation by people <br />
+                for people
               </h1>
               <div className="content text-gray-500">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
@@ -43,7 +43,7 @@ const HomeComponent = () => {
                   className="fit-cover motion-safe:animate-bounce delay-300
                   z-index--1 rounded-xl hover:skew-x-6"
                   src="https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Hea"
+                  alt="Head image"
                 />
               </div>
             </div>
