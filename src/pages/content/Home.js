@@ -1,5 +1,15 @@
+/**
+ * The following content is written in the home content
+ * will change according to the need of the enitity and 
+ * due to this... This is only a sample content which is used
+ * for the prototype.
+ * A simple note for the developer... 
+ *
+*/
+
 import { Button } from "@nextui-org/react";
 import React from "react";
+import HomeCSS from './scss/Home.module.css'
 
 const HomeComponent = () => {
   return (
@@ -38,10 +48,10 @@ const HomeComponent = () => {
               </div>
             </div>
             <div className="col-md-5">
-              <div className="container w-full h-full">
+              <div className={`container w-full h-full ${HomeCSS.responsiveImageContent}`}>
                 <img
-                  className="fit-cover motion-safe:animate-bounce delay-300
-                  z-index--1 rounded-xl hover:skew-x-6"
+                  className={`fit-cover motion-safe:animate-bounce delay-300
+                  z-index--1 rounded-xl hover:skew-x-2`}
                   src="https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt="Head image"
                 />
@@ -50,7 +60,12 @@ const HomeComponent = () => {
           </div>
         </div>
         <div className="container my-3">
-          <h1>Second section</h1>
+          <h1>Our worklogs</h1> 
+          <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-4"></div>
+            <div className="col-md-4"></div>
+          </div>
         </div>
       </div>
     </>

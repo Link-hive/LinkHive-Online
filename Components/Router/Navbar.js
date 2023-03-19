@@ -32,7 +32,7 @@ const NavbarComponent = () => {
   const linkHive = [
     { content: "Home", href: "/", isActive: false },
     { content: "Docs", href: "/content/Documentation", isActive: false },
-    { content: "Latest Blogs", href: "/content/Blogs", isActive: "text-bold" },
+    { content: "Latest Blogs", href: "/data/blog-slug", isActive: "text-bold" },
     { content: "About", href: "/content/About", isActive: false },
     { content: "Code of conduct", href: "/content/Conduct", isActive: false },
     {
