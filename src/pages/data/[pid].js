@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 
-const pidComponent = () => {
+const PidComponent = () => {
   const router = useRouter()
   const {pid} = router.query;
   
@@ -10,4 +10,4 @@ const pidComponent = () => {
   )
 }
 
-export default pidComponent
+export default PidComponent
