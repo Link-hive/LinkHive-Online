@@ -12,7 +12,7 @@ const HomeComponent = () => {
           <div className="row items-center">
             <div className="col-md-7">
               <h1 className="drop-shadow-sm">
-                We are innovation by people <br />
+                We are the innovation <br />
                 for people
               </h1>
               <div className="content text-gray-500">
