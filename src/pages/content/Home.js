@@ -10,11 +10,13 @@
 import { Button } from "@nextui-org/react";
 import React from "react";
 import HomeCSS from './scss/Home.module.css'
+import AOS from 'aos'
 
 const HomeComponent = () => {
+
   return (
     <>
-      <div className="page-content">
+      <div className="page-content" data-aos="fade-up" data-aos-duration="2000">
         <div
           className="container my-20 w-100 h-100 items-center"
           style={{ height: "100vh" }}

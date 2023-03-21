@@ -6,13 +6,15 @@
 
 import "@/styles/globals.css";
 import NavbarComponent from "Components/Router/Navbar";
-import React from "react";
+import React, {useEffect} from "react";
 import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "@material-tailwind/react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const lightTheme = createTheme({
   type: "light",
@@ -34,7 +36,17 @@ const darkTheme = createTheme({
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
-}) {
+}) 
+{
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+      duration:1000,
+    });
+  }, []);
+
   return (
     <>
       <SessionProvider session={session}>
