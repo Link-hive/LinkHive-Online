@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "User data management backend for application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Link-hive/LinkHive-Online.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "anshu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Link-hive/LinkHive-Online/issues"
+  },
+  "homepage": "https://github.com/Link-hive/LinkHive-Online#readme",
+  "devDependencies": {
+    "axios": "^1.5.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.2"
+  }
+}
